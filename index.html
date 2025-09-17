@@ -376,47 +376,38 @@
       </div>
     </div>
   </section>
+<!-- Contacto -->
+<section id="contacto" class="section">
+  <div class="container">
+    <form id="contact-form" class="form">
+      <div class="grid-2">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu email" required>
+      </div>
 
-  <!-- Contacto -->
-  <section id="contacto" class="section">
-    <div class="container">
-      <h2>¡Reserva tu sesión ya!</h2>
-      <p class="section-lead">Cuéntame tu objetivo y te contacto en menos de 24h.</p>
+      <input type="tel" name="telefono" placeholder="Tu teléfono" required>
 
-      <form class="form" action="https://formsubmit.co/tufitmentor360@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Nueva reserva — Tufitmentor360">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://tufitmentor360.com/gracias.html">
-        <input type="text" name="_honey" style="display:none">
+      <select name="objetivo" required>
+        <option value="">Selecciona tu objetivo</option>
+        <option>Perder grasa</option>
+        <option>Ganar masa muscular</option>
+        <option>Mejorar rendimiento</option>
+        <option>Rehabilitación / dolor</option>
+      </select>
 
-        <div class="grid-2">
-          <input type="text" name="nombre" placeholder="Tu nombre" required>
-          <input type="email" name="email" placeholder="Tu email" required>
-        </div>
+      <textarea name="mensaje" rows="4" placeholder="Cuéntame brevemente tu situación"></textarea>
 
-        <input type="tel" name="telefono" placeholder="Tu teléfono" required>
-
-        <select name="objetivo" required>
-          <option value="">Selecciona tu objetivo</option>
-          <option>Perder grasa</option>
-          <option>Ganar masa muscular</option>
-          <option>Mejorar rendimiento</option>
-          <option>Rehabilitación / dolor</option>
-        </select>
-
-        <textarea name="mensaje" rows="4" placeholder="Cuéntame brevemente tu situación"></textarea>
-
+      <div class="form-actions">
         <button class="btn" type="submit">Enviar</button>
+        <a href="https://wa.me/34618220681" target="_blank" class="btn-wa">
+          También me puedes escribir por WhatsApp al +34 618 220 681
+        </a>
+      </div>
+    </form>
+  </div>
+</section>
 
-        <p class="mini-note">
-          También por WhatsApp:
-          <a href="https://wa.me/34618220681?text=Hola%2C%20estoy%20interesado%20en%20tus%20servicios%20de%20entrenamiento%20personal."
-             target="_blank" rel="noopener">+34 618 22 06 81</a>
-        </p>
-      </form>
-    </div>
-  </section>
+
 
   <!-- ===================== ADICIÓN 2: Sección compacta SEO con acordeones ===================== -->
   <section id="cobertura-madrid" class="madrid-seo-section" aria-label="Cobertura en Madrid: distritos, barrios y zonas">
@@ -769,6 +760,27 @@
   </a>
 
   <!-- JS inline tal cual lo tenías -->
+   <!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    // Tu Public Key real
+    emailjs.init("3OpuxVIDANyk0ItQB");
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    emailjs.sendForm("service_7z6lomn", "template_828c41q", this)
+      .then(() => {
+        alert("✅ Tu correo se ha enviado, contactaremos contigo lo antes posible.");
+        window.location.href = "gracias.html";
+      }, (error) => {
+        alert("❌ Error al enviar: " + JSON.stringify(error));
+      });
+  });
+</script>
+
   <script>
     // ===== Menú móvil =====
     const btn = document.getElementById('btnMenu');
