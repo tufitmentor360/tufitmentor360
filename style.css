@@ -74,11 +74,11 @@ a{color:var(--accent); text-decoration:none}
   position: relative;
 }
 .hero-watermark{
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
 }
 .watermark-logo{
