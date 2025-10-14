@@ -26,6 +26,7 @@ body{
     radial-gradient(800px 400px at -5% 10%, rgba(124,58,237,.12), transparent 55%),
     #05070c;
   line-height:1.6;
+  padding-top:80px;
 }
 a{color:var(--accent); text-decoration:none}
 .container{width:min(1160px,90%); margin:auto}
@@ -54,10 +55,19 @@ a{color:var(--accent); text-decoration:none}
 .btn-sm{padding:9px 14px; font-size:.92rem}
 .btn.block{display:block; text-align:center}
 
-/* ===== Header ===== */
-.header{
-  position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px);
-  background:rgba(6,10,16,.55); border-bottom:1px solid rgba(255,255,255,.06);
+/* ===== Header FIJO QUE NO SE MUEVE ===== */
+.header-fixed-top{
+  position:fixed !important; 
+  top:0 !important; 
+  left:0 !important; 
+  right:0 !important; 
+  z-index:9999 !important; 
+  backdrop-filter:saturate(180%) blur(10px);
+  background:rgba(6,10,16,.98) !important; 
+  border-bottom:1px solid rgba(255,255,255,.06);
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
 }
 .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
 .nav-links{display:flex; gap:22px; align-items:center}
@@ -265,7 +275,8 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent)}
 
 /* ===== Responsive ===== */
 @media (max-width: 900px){
-  .nav-links{display:none; position:absolute; right:5%; top:64px; background:#0b0f17; border:1px solid rgba(255,255,255,.1); padding:14px; border-radius:12px; flex-direction:column}
+  body{padding-top:70px}
+  .nav-links{display:none; position:fixed; right:5%; top:70px; background:#0b0f17; border:1px solid rgba(255,255,255,.1); padding:14px; border-radius:12px; flex-direction:column; z-index:1001}
   .menu-btn{display:block}
   .hero-grid{grid-template-columns:1fr}
   .grid-3{grid-template-columns:1fr}

@@ -46,22 +46,6 @@
   <!-- =================== FIN ADICIÓN 1 =================== -->
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container nav">
-      <a href="#hero" class="logo">
-        <img src="logo-tufitmentor360.png" alt="Tufitmentor360" class="logo-img">
-      </a>
-      <nav id="navMenu" class="nav-links">
-        <a href="#servicios">Servicios</a>
-        <a href="#planes">Planes</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#faq">FAQs</a>
-        <a href="#contacto" class="btn btn-sm">Reserva</a>
-      </nav>
-      <button id="btnMenu" class="menu-btn" aria-label="Abrir menú">☰</button>
-    </div>
-  </header>
 
   <!-- Watermark -->
   <div class="hero-watermark">
@@ -568,6 +552,7 @@
       <div>
         <a href="#hero" class="logo">
           <img src="logo-tufitmentor360.png" alt="Tufitmentor360" class="logo-img footer-logo">
+          <span class="logo-text">Tufitmentor<span>360</span></span>
         </a>
         <p class="footer-slogan">Transforma tu cuerpo, conquista tu mente</p>
         <p>Entrenador personal presencial. Madrid.</p>
@@ -586,6 +571,24 @@
     </div>
     <p class="copy">© <span id="year"></span> Tufitmentor360. Todos los derechos reservados.</p>
   </footer>
+
+  <!-- Header FIJO al final para que NO SE MUEVA -->
+  <header class="header header-fixed-top">
+    <div class="container nav">
+      <a href="#hero" class="logo">
+        <img src="logo-tufitmentor360.png" alt="Tufitmentor360" class="logo-img">
+        <span class="logo-text">Tufitmentor<span>360</span></span>
+      </a>
+      <nav id="navMenu" class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#planes">Planes</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#faq">FAQs</a>
+        <a href="#contacto" class="btn btn-sm">Reserva</a>
+      </nav>
+      <button id="btnMenu" class="menu-btn" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
 
   <!-- Banner de cookies -->
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
