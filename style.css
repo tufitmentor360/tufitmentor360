@@ -4,10 +4,12 @@
   --surface:#0b1019;
   --muted:#9aa3af;
   --text:#ecf1f9;
-  --accent:#3ea0ff;
+  --accent:#00B8C4;
+  --primary-dark:#003366;
+  --neutral-light:#F2F2F2;
 
   /* Temas potentes por categoría */
-  --presencial-1:#1d4ed8; --presencial-2:#60a5fa; /* azul vivo */
+  --presencial-1:#003366; --presencial-2:#00B8C4; /* colores corporativos */
   --grupal-1:#16a34a;     --grupal-2:#4ade80;     /* verde vibrante */
   --online-1:#7c3aed;     --online-2:#c084fc;     /* violeta intenso */
   --program-1:#f97316;    --program-2:#fb923c;    /* naranja cálido */
@@ -35,8 +37,14 @@ a{color:var(--accent); text-decoration:none}
 .btn{
   display:inline-block; padding:12px 20px; border-radius:14px;
   background:var(--accent); color:#fff; font-weight:800;
-  box-shadow:0 18px 40px rgba(62,160,255,.35);
+  box-shadow:0 18px 40px rgba(0,184,196,.35);
   transition:.2s transform ease,.2s filter ease;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 .btn:hover{transform:translateY(-2px); filter:brightness(1.06)}
 .btn.ghost{background:transparent; border:2px solid var(--accent); color:var(--accent)}
@@ -63,6 +71,8 @@ a{color:var(--accent); text-decoration:none}
 }
 .hero-grid{display:grid; gap:36px; grid-template-columns:1.1fr .9fr; align-items:center}
 .hero h1{font-size:clamp(32px,6vw,56px); line-height:1.15; margin:0 0 12px; font-weight:900}
+.hero-subtitle{font-size:clamp(20px,4vw,32px); color:var(--accent); margin:8px 0 16px; font-weight:800; text-align:center}
+.hero-proposal{color:var(--primary-dark); background:var(--neutral-light); padding:16px 20px; border-radius:12px; margin:12px 0 18px; font-size:1.1rem; font-weight:600; border-left:4px solid var(--accent)}
 .hero p{color:var(--muted); margin:6px 0 18px; font-size:1.05rem}
 .hero-cta{display:flex; gap:12px; flex-wrap:wrap}
 .badges{display:flex; gap:16px; flex-wrap:wrap; padding:0; list-style:none; color:#cdd6e3; font-size:.98rem}
@@ -88,12 +98,13 @@ a{color:var(--accent); text-decoration:none}
   font-size:clamp(22px,3.8vw,34px);
   text-transform:uppercase;
 }
-.sub-presencial{color:var(--presencial-2)}
+.sub-presencial{color:var(--presencial-2); text-shadow: 0 0 20px rgba(0,184,196,.3)}
 .sub-grupal{color:var(--grupal-2)}
 .sub-online{color:var(--online-2)}
 .sub-programacion{color:var(--program-2)}
 
 .grid-3{display:grid; gap:18px; grid-template-columns:repeat(3,1fr)}
+@media (max-width: 900px){.grid-3{grid-template-columns:1fr}}
 .grid-2{display:grid; gap:12px; grid-template-columns:repeat(2,1fr)}
 
 .card{
@@ -119,13 +130,24 @@ a{color:var(--accent); text-decoration:none}
 
 /* Temas vivos por categoría */
 .theme-presencial{
-  border-color: color-mix(in oklab, var(--presencial-1) 55%, #fff 0%);
+  border-color: color-mix(in oklab, var(--presencial-1) 70%, #fff 0%);
   background:
-    radial-gradient(600px 200px at -10% -20%, color-mix(in oklab, var(--presencial-2) 35%, transparent), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-  box-shadow:0 18px 50px color-mix(in oklab, var(--presencial-1) 25%, transparent);
+    radial-gradient(600px 200px at -10% -20%, color-mix(in oklab, var(--presencial-2) 45%, transparent), transparent 60%),
+    linear-gradient(180deg, rgba(0,51,102,.08), rgba(0,51,102,.04));
+  box-shadow:0 18px 50px color-mix(in oklab, var(--presencial-1) 35%, transparent);
 }
-.theme-presencial .btn{background:var(--presencial-1); box-shadow:0 18px 40px color-mix(in oklab, var(--presencial-1) 40%, transparent)}
+.theme-presencial .btn{
+  background:linear-gradient(135deg, var(--presencial-1), var(--presencial-2));
+  box-shadow:0 18px 40px color-mix(in oklab, var(--presencial-1) 40%, transparent);
+  border: 2px solid var(--presencial-2);
+  position: relative;
+  overflow: hidden;
+}
+.theme-presencial .btn:hover{
+  background:linear-gradient(135deg, var(--presencial-2), var(--presencial-1));
+  transform: translateY(-3px);
+  box-shadow:0 25px 50px color-mix(in oklab, var(--presencial-1) 50%, transparent);
+}
 .theme-presencial .ribbon{background:var(--presencial-2)}
 
 .theme-grupal{
@@ -219,6 +241,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent)}
 .footer{padding:28px 0 12px; background:#070b12; border-top:1px solid rgba(255,255,255,.08)}
 .footer-grid{display:grid; gap:18px; grid-template-columns:2fr 1fr 1fr; align-items:start}
 .foot-links,.foot-social{display:grid; gap:10px}
+.footer-slogan{color:var(--accent); font-weight:700; font-size:1.1rem; margin:8px 0 12px}
 .copy{color:#a1abbb; text-align:center; margin:10px 0}
 .accent{color:var(--accent)}
 
