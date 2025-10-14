@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tufitmentor360 | Entrenador Personal</title>
+  <meta name="description" content="Entrenamientos personales presenciales, grupales y programación. Planes a medida, seguimiento 1:1 y resultados reales.">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ===================== ADICIÓN 1: JSON-LD SEO (ItemList de distritos de Madrid) ===================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Distritos de Madrid",
+    "itemListOrder": "http://schema.org/ItemListOrderAscending",
+    "numberOfItems": 21,
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Centro"},
+      {"@type":"ListItem","position":2,"name":"Arganzuela"},
+      {"@type":"ListItem","position":3,"name":"Retiro"},
+      {"@type":"ListItem","position":4,"name":"Salamanca"},
+      {"@type":"ListItem","position":5,"name":"Chamartín"},
+      {"@type":"ListItem","position":6,"name":"Tetuán"},
+      {"@type":"ListItem","position":7,"name":"Chamberí"},
+      {"@type":"ListItem","position":8,"name":"Fuencarral-El Pardo"},
+      {"@type":"ListItem","position":9,"name":"Moncloa-Aravaca"},
+      {"@type":"ListItem","position":10,"name":"Latina"},
+      {"@type":"ListItem","position":11,"name":"Carabanchel"},
+      {"@type":"ListItem","position":12,"name":"Usera"},
+      {"@type":"ListItem","position":13,"name":"Puente de Vallecas"},
+      {"@type":"ListItem","position":14,"name":"Moratalaz"},
+      {"@type":"ListItem","position":15,"name":"Ciudad Lineal"},
+      {"@type":"ListItem","position":16,"name":"Hortaleza"},
+      {"@type":"ListItem","position":17,"name":"Villaverde"},
+      {"@type":"ListItem","position":18,"name":"Villa de Vallecas"},
+      {"@type":"ListItem","position":19,"name":"Vicálvaro"},
+      {"@type":"ListItem","position":20,"name":"San Blas-Canillejas"},
+      {"@type":"ListItem","position":21,"name":"Barajas"}
+    ]
+  }
+  </script>
+  <!-- =================== FIN ADICIÓN 1 =================== -->
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#hero" class="logo">Tufitmentor<span>360</span></a>
+      <nav id="navMenu" class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#planes">Planes</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#faq">FAQs</a>
+        <a href="#contacto" class="btn btn-sm">Reserva</a>
+      </nav>
+      <button id="btnMenu" class="menu-btn" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Entrenamiento personal en Madrid a domicilio o donde tú quieras <span class="accent">100% a tu medida</span></h1>
+        <p>Entrenamientos presenciales, grupales y programación. Progresión segura, hábitos simples y acompañamiento real.</p>
+        <div class="hero-cta">
+          <a href="#contacto" class="btn">Sesión de evaluación inicial al 50% si contratas un bono</a>
+          <a href="#planes" class="btn ghost">Ver planes</a>
+        </div>
+        <ul class="badges">
+          <li>✅ Entrenamiento personal presencial a domicilio o donde tú quieras</li>
+          <li>✅ Flexibilidad total de horarios y lugar</li>
+          <li>✅ Resultados reales y medibles desde las primeras semanas</li>
+          <li>✅ Tú solo entrenas, nosotros nos ocupamos del resto</li>
+          <li>✅ Corrección de técnica y mejora de la postura</li>
+          <li>✅ Progresión segura y sin lesiones</li>
+        </ul>
+      </div>
+      <div class="hero-card">
+        <div class="hero-stats">
+          <div><strong>Entrenamos Contigo</strong><span></span></div>
+          <div><strong>100%</strong><span>Guiado</span></div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop" alt="Entrenamiento personal">
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="section">
+    <div class="container">
+      <h2>¿Qué incluye el entrenamiento?</h2>
+      <p class="section-lead">Diseñado para avanzar de forma segura y constante, sin perder motivación.</p>
+      <div class="grid-3">
+        <article class="card"><h3>Evaluación inicial</h3><p>Movilidad, historial y objetivos claros.</p></article>
+        <article class="card"><h3>Plan de fuerza & cardio</h3><p>Periodización y progresión semanal.</p></article>
+        <article class="card"><h3>Nutrición básica</h3><p>Hábitos y porciones realistas.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disciplinas -->
+  <section id="disciplinas" class="section alt">
+    <div class="container">
+      <div class="disc-grid">
+        <div>
+          <h2>Cross Training y Funcional</h2>
+          <ul class="list-check">
+            <li>Fuerza e Hipertrofia</li>
+            <li>HIIT</li>
+            <li>Rutinas de Agilidad y Resistencia</li>
+            <li>Ejercicios de Movilidad y Coordinación</li>
+            <li>Velocidad y Pliometría</li>
+            <li>Equilibrio y Propiocepción</li>
+            <li>Halterofilia</li>
+            <li>Clubell y Kettlebell</li>
+            <li>Gimnásticos y anillas</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Calistenia funcional</h2>
+          <ul class="list-check">
+            <li>Entrenamientos con peso corporal</li>
+            <li><strong>Principiante</strong></li>
+            <li><strong>Medio</strong></li>
+            <li><strong>Avanzado</strong></li>
+            <li>Técnica</li>
+            <li>Movilidad y control corporal</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planes -->
+  <section id="planes" class="section alt">
+    <div class="container">
+      <h2>Planes simples, resultados reales</h2>
+      <p class="section-lead">Entrenamiento personal presencial adaptado a tus necesidades y objetivos.</p>
+
+      <!-- PRESENCIAL -->
+      <h3 class="sub-title sub-presencial">Entrenamiento Presencial🏋️</h3>
+      <div class="plans">
+        <article class="plan theme-presencial">
+          <h4>1 sesión</h4>
+          <p class="price">55 €</p>
+          <ul>
+            <li>Evaluación inicial</li>
+            <li>Correcciones y guía en sala</li>
+            <li>Plan mensual</li>
+            <li>Seguimiento semanal</li>
+            <li>Coaching deportivo</li>
+            <li>Acceso a programación</li>
+          </ul>
+          <a href="#contacto" class="btn block">Reservar</a>
+        </article>
+        <article class="plan theme-presencial featured">
+          <h4>Pack 4 sesiones / 4 semanas</h4>
+          <p class="price">184 € <span>(46 €/sesión)</span></p>
+          <ul>
+            <li>Evaluación inicial</li>
+            <li>Correcciones y guía en sala</li>
+            <li>Plan mensual + hábitos</li>
+            <li>Seguimiento diario</li>
+            <li>Coaching deportivo</li>
+            <li>Acceso a programación</li>
+          </ul>
+          <a href="#contacto" class="btn block">Reservar</a>
+        </article>
+        <article class="plan theme-presencial">
+          <div class="ribbon">Más elegido</div>
+          <h4>Pack 8 sesiones / 6 semanas</h4>
+          <p class="price">344 € <span>(43 €/sesión)</span></p>
+          <ul>
+            <li>Evaluación inicial</li>
+            <li>Correcciones y guía en sala</li>
+            <li>Plan mensual + hábitos + nutrición</li>
+            <li>Seguimiento diario</li>
+            <li>Coaching deportivo</li>
+            <li>Acceso a programación</li>
+            <li>Descuentos exclusivos</li>
+          </ul>
+          <a href="#contacto" class="btn block">Reservar</a>
+        </article>
+      </div>
+      <p class="mini-note">*Primera sesión al 50% si contratas bono.</p>
+
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" class="section">
+    <div class="container">
+      <h2>Historias de cambio</h2> <div class="carousel" aria-label="Carrusel de testimonios (desliza la barra para ver más)"> <div class="carousel-track" id="testiTrack" tabindex="0"> <!-- Testimonio 1 --> <figure class="testi"> <div class="stars" aria-label="5 estrellas" title="5/5"> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> </div> <blockquote>"En 4 meses gané fuerza y bajé 6 kg. El seguimiento semanal marca la diferencia."</blockquote> <figcaption>— Andrés C.</figcaption> </figure> <!-- Testimonio 2 --> <figure class="testi"> <div class="stars" aria-label="5 estrellas" title="5/5"> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> </div> <blockquote>"Por fin técnica sólida en sentadilla y peso muerto. Cero dolores."</blockquote> <figcaption>— Caridad C.</figcaption> </figure> <!-- Testimonio 3 --> <figure class="testi"> <div class="stars" aria-label="5 estrellas" title="5/5"> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> <svg viewBox="0 0 24 24" class="star"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,16.8 5.5,21 7.5,13.5 2,9 9,9"/></svg> </div> <blockquote>"Empecé con mucho dolor de espalda, no sabía qué más hacer. Después de 4 meses con Carlos no tengo ningún dolor."</blockquote> <figcaption>— Sara M.</figcaption> </figure> </div> </div> </div> </section>
+
+  <!-- FAQs -->
+  <section id="faq" class="section alt">
+    <div class="container">
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq">
+        <details><summary>¿Necesito experiencia previa?</summary><p>No. Adaptamos ejercicios y cargas a tu nivel.</p></details>
+        <details><summary>¿Incluye dieta?</summary><p>Según el paquete, guía de hábitos de nutrición y descanso. Para dietas clínicas, derivamos a nutrición titulada.</p></details>
+        <details><summary>¿Puedo pausar el plan?</summary><p>Sí. Avisando con 7 días, pausamos o reprogramamos.</p></details>
+      </div>
+    </div>
+  </section>
+<!-- Contacto -->
+<section id="contacto" class="section">
+  <div class="container">
+    <form id="contact-form" class="form">
+      <div class="grid-2">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu email" required>
+      </div>
+
+      <input type="tel" name="telefono" placeholder="Tu teléfono" required>
+
+      <select name="objetivo" required>
+        <option value="">Selecciona tu objetivo</option>
+        <option>Perder grasa</option>
+        <option>Ganar masa muscular</option>
+        <option>Mejorar rendimiento</option>
+        <option>Rehabilitación / dolor</option>
+      </select>
+
+      <textarea name="mensaje" rows="4" placeholder="Cuéntame brevemente tu situación"></textarea>
+
+      <div class="form-actions">
+        <button class="btn" type="submit">Enviar</button>
+        <a href="https://wa.me/34919127181?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20planes%20de%20entrenamiento%20personal" target="_blank" class="btn-wa">
+          También me puedes escribir por WhatsApp
+        </a>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+  <!-- ===================== ADICIÓN 2: Sección compacta SEO con acordeones ===================== -->
+  <section id="cobertura-madrid" class="madrid-seo-section" aria-label="Cobertura en Madrid: distritos, barrios y zonas">
+    <style>
+      /* Estilos aislados para no tocar tu style.css */
+      .madrid-seo-section { padding: 2rem 0; background: #0b0b0b; }
+      .madrid-seo-wrap { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+      .madrid-seo-title { margin: 0 0 0.75rem; font-weight: 800; font-size: clamp(1.1rem, 0.9rem + 1vw, 1.5rem); }
+      .madrid-seo-lead { margin: 0 0 1rem; opacity: .85; }
+
+      /* === BUSCADOR (NUEVO) === */
+      .madrid-seo-search { display:grid; grid-template-columns:1fr auto; gap:.6rem; align-items:center; margin:.5rem 0 1rem; }
+      .madrid-seo-search input {
+        width:100%; padding:.75rem .9rem; border-radius:.6rem; border:1px solid rgba(255,255,255,.12);
+        background:#101010; color:#fff; outline:none;
+      }
+      .madrid-seo-search input::placeholder{ color:#9aa3af; }
+      .madrid-seo-count { justify-self:end; font-size:.92rem; color:#cbd5e1; }
+
+      .madrid-seo-grid { display: grid; gap: .5rem; }
+      .madrid-seo-details { border: 1px solid #222; border-radius: .6rem; background: #121212; padding: .25rem .5rem; }
+      .madrid-seo-details > summary { cursor: pointer; list-style: none; padding: .5rem; font-weight: 700; display:flex; gap:.5rem; align-items:center; }
+      .madrid-seo-details > summary::-webkit-details-marker { display:none; }
+      .madrid-seo-badge { font-weight: 600; opacity: .7; font-size: .9rem; }
+      .madrid-seo-cols { display:grid; grid-template-columns:1fr; gap:.75rem; padding: .25rem .5rem 0.75rem; }
+      @media (min-width: 800px){ .madrid-seo-cols { grid-template-columns: 1fr 1fr; } }
+      .madrid-seo-card { background:#161616; border:1px solid #1f1f1f; border-radius:.5rem; padding:.75rem; }
+      .madrid-seo-card h3 { margin:.1rem 0 .35rem; font-size:1rem; }
+      .madrid-seo-card ul { margin:.25rem 0 0; padding-left:1rem; columns:2; column-gap:2rem; }
+      @media (max-width: 640px){ .madrid-seo-card ul { columns:1; } }
+
+      /* estados de búsqueda */
+      .madrid-hidden { display:none !important; }
+      .madrid-match { outline: 2px solid rgba(62,160,255,.45); border-radius:.5rem; }
+    </style>
+    <div class="madrid-seo-wrap">
+      <h2 class="madrid-seo-title">Cobertura en Madrid: distritos, barrios y zonas</h2>
+      <p class="madrid-seo-lead">Trabajamos en toda la ciudad. Despliega cada distrito para ver si tu barrio está en nuestra zona de trabajo. Si no estuviese siempre puedes preguntarnos😁.</p>
+
+      <!-- === BUSCADOR (NUEVO) === -->
+      <div class="madrid-seo-search">
+        <input id="madridSearch" type="search" placeholder="Buscar distrito, barrio o zona (ej. Montecarmelo, Chamartín, La Latina…)" aria-label="Buscar distrito, barrio o zona">
+        <div class="madrid-seo-count"><span id="madridCount">21</span> distritos</div>
+      </div>
+
+      <div class="madrid-seo-grid" id="madridList">
+
+        <!-- 1 Centro -->
+        <details class="madrid-seo-details" id="distrito-centro" open>
+          <summary>1. Centro <span class="madrid-seo-badge">Barrios: 6 · Zonas: Lavapiés, La Latina, Malasaña, Chueca…</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card">
+              <h3>Barrios oficiales</h3>
+              <ul><li>Palacio</li><li>Embajadores</li><li>Cortes</li><li>Justicia</li><li>Universidad</li><li>Sol</li></ul>
+            </div>
+            <div class="madrid-seo-card">
+              <h3>Zonas populares</h3>
+              <ul><li>Lavapiés</li><li>La Latina</li><li>Malasaña</li><li>Chueca</li><li>Conde Duque</li><li>Huertas</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 2 Arganzuela -->
+        <details class="madrid-seo-details" id="distrito-arganzuela">
+          <summary>2. Arganzuela <span class="madrid-seo-badge">Barrios: 7 · Zonas: Matadero, Madrid Río</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Imperial</li><li>Acacias</li><li>Chopera</li><li>Legazpi</li><li>Delicias</li><li>Palos de Moguer</li><li>Atocha</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>Matadero</li><li>Madrid Río</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 3 Retiro -->
+        <details class="madrid-seo-details" id="distrito-retiro">
+          <summary>3. Retiro <span class="madrid-seo-badge">Barrios: 6</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Pacífico</li><li>Adelfas</li><li>Estrella</li><li>Ibiza</li><li>Jerónimos</li><li>Niño Jesús</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 4 Salamanca -->
+        <details class="madrid-seo-details" id="distrito-salamanca">
+          <summary>4. Salamanca <span class="madrid-seo-badge">Barrios: 6 · Zona: Milla de Oro</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Recoletos</li><li>Goya</li><li>Fuente del Berro</li><li>Guindalera</li><li>Lista</li><li>Castellana</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>Milla de Oro</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 5 Chamartín -->
+        <details class="madrid-seo-details" id="distrito-chamartin">
+          <summary>5. Chamartín <span class="madrid-seo-badge">Barrios: 6 · Zonas: Bernabéu, Cruz del Rayo</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>El Viso</li><li>Prosperidad</li><li>Ciudad Jardín</li><li>Hispanoamérica</li><li>Nueva España</li><li>Castilla</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>Bernabéu</li><li>Cruz del Rayo</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 6 Tetuán -->
+        <details class="madrid-seo-details" id="distrito-tetuan">
+          <summary>6. Tetuán <span class="madrid-seo-badge">Barrios: 6 · Zona: Bravo Murillo</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Bellas Vistas</li><li>Cuatro Caminos</li><li>Castillejos</li><li>Almenara</li><li>Valdeacederas</li><li>Berruguete</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>Bravo Murillo</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 7 Chamberí -->
+        <details class="madrid-seo-details" id="distrito-chamberi">
+          <summary>7. Chamberí <span class="madrid-seo-badge">Barrios: 6</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Gaztambide</li><li>Arapiles</li><li>Trafalgar</li><li>Almagro</li><li>Ríos Rosas</li><li>Vallehermoso</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 8 Fuencarral-El Pardo -->
+        <details class="madrid-seo-details" id="distrito-fuencarral">
+          <summary>8. Fuencarral-El Pardo <span class="madrid-seo-badge">Barrios: 8 · Zonas: Montecarmelo, Las Tablas, Arroyo del Fresno…</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>El Pardo</li><li>Fuentelarreina</li><li>Peñagrande</li><li>Pilar</li><li>La Paz</li><li>Valverde</li><li>Mirasierra</li><li>El Goloso</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>Montecarmelo (Mirasierra)</li><li>Las Tablas (Valverde)</li><li>Tres Olivos</li><li>Santa Ana</li><li>Arroyo del Fresno</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 9 Moncloa-Aravaca -->
+        <details class="madrid-seo-details" id="distrito-moncloa">
+          <summary>9. Moncloa-Aravaca <span class="madrid-seo-badge">Barrios: 7 · Zonas: Puerta de Hierro, Valdemarín</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Casa de Campo</li><li>Argüelles</li><li>Ciudad Universitaria</li><li>Valdezarza</li><li>Valdemarín</li><li>El Plantío</li><li>Aravaca</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>Puerta de Hierro</li><li>Valdemarín</li><li>Somosaguas (colindante)</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 10 Latina -->
+        <details class="madrid-seo-details" id="distrito-latina">
+          <summary>10. Latina <span class="madrid-seo-badge">Barrios: 7</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Los Cármenes</li><li>Puerta del Ángel</li><li>Lucero</li><li>Aluche</li><li>Campamento</li><li>Cuatro Vientos</li><li>Las Águilas</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 11 Carabanchel -->
+        <details class="madrid-seo-details" id="distrito-carabanchel">
+          <summary>11. Carabanchel <span class="madrid-seo-badge">Barrios: 7 · Zonas: Pan Bendito</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Comillas</li><li>Opañel</li><li>San Isidro</li><li>Vista Alegre</li><li>Puerta Bonita</li><li>Buenavista</li><li>Abrantes</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>Pan Bendito</li><li>General Ricardos</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 12 Usera -->
+        <details class="madrid-seo-details" id="distrito-usera">
+          <summary>12. Usera <span class="madrid-seo-badge">Barrios: 7</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Orcasitas</li><li>Orcasur</li><li>San Fermín</li><li>Almendrales</li><li>Moscardó</li><li>Zofío</li><li>Pradolongo</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 13 Puente de Vallecas -->
+        <details class="madrid-seo-details" id="distrito-puentevallecas">
+          <summary>13. Puente de Vallecas <span class="madrid-seo-badge">Barrios: 6 · Zonas: Vallecas “pueblo”</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Entrevías</li><li>San Diego</li><li>Palomeras Bajas</li><li>Palomeras Sureste</li><li>Portazgo</li><li>Numancia</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>Asamblea de Madrid-Entrevías</li><li>Vallecas “pueblo”</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 14 Moratalaz -->
+        <details class="madrid-seo-details" id="distrito-moratalaz">
+          <summary>14. Moratalaz <span class="madrid-seo-badge">Barrios: 6</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Pavones</li><li>Horcajo</li><li>Marroquina</li><li>Media Legua</li><li>Fontarrón</li><li>Vinateros</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 15 Ciudad Lineal -->
+        <details class="madrid-seo-details" id="distrito-ciudadlineal">
+          <summary>15. Ciudad Lineal <span class="madrid-seo-badge">Barrios: 9 · Zona: La Elipa</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Ventas</li><li>Pueblo Nuevo</li><li>Quintana</li><li>Concepción</li><li>San Pascual</li><li>San Juan Bautista</li><li>Colina</li><li>Atalaya</li><li>Costillares</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>La Elipa</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 16 Hortaleza -->
+        <details class="madrid-seo-details" id="distrito-hortaleza">
+          <summary>16. Hortaleza <span class="madrid-seo-badge">Barrios: 6 · Zonas: Sanchinarro, Conde Orgaz</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Palomas</li><li>Valdefuentes</li><li>Canillas</li><li>Piovera</li><li>Apóstol Santiago</li><li>Pinar del Rey</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>Sanchinarro (Valdefuentes)</li><li>Parque de Santa María</li><li>Conde Orgaz</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 17 Villaverde -->
+        <details class="madrid-seo-details" id="distrito-villaverde">
+          <summary>17. Villaverde <span class="madrid-seo-badge">Barrios: 5 · Zonas: Villaverde Alto y Bajo</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>San Andrés</li><li>San Cristóbal</li><li>Butarque</li><li>Los Ángeles</li><li>Los Rosales</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>Villaverde Alto</li><li>Villaverde Bajo</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 18 Villa de Vallecas -->
+        <details class="madrid-seo-details" id="distrito-villavallecas">
+          <summary>18. Villa de Vallecas <span class="madrid-seo-badge">Barrios: 3 · Zonas: Ensanche de Vallecas</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Casco Histórico de Vallecas</li><li>Santa Eugenia</li><li>Ensanche de Vallecas</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 19 Vicálvaro -->
+        <details class="madrid-seo-details" id="distrito-vicalvaro">
+          <summary>19. Vicálvaro <span class="madrid-seo-badge">Barrios: 4 · Zona: El Cañaveral</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Casco Histórico de Vicálvaro</li><li>Ambroz</li><li>Valdebernardo</li><li>Valderrivas</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>El Cañaveral (en expansión)</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 20 San Blas-Canillejas -->
+        <details class="madrid-seo-details" id="distrito-sanblas">
+          <summary>20. San Blas-Canillejas <span class="madrid-seo-badge">Barrios: 8 · Zonas: Las Rosas</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Simancas</li><li>Hellín</li><li>Amposta</li><li>Arcos</li><li>Rosas</li><li>Rejas</li><li>Canillejas</li><li>Salvador</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>Las Rosas</li><li>Plenilunio (comercial)</li></ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- 21 Barajas -->
+        <details class="madrid-seo-details" id="distrito-barajas">
+          <summary>21. Barajas <span class="madrid-seo-badge">Barrios: 5 · Zonas: Campo de las Naciones</span></summary>
+          <div class="madrid-seo-cols">
+            <div class="madrid-seo-card"><h3>Barrios oficiales</h3>
+              <ul><li>Alameda de Osuna</li><li>Aeropuerto</li><li>Casco Histórico de Barajas</li><li>Timón</li><li>Corralejos</li></ul>
+            </div>
+            <div class="madrid-seo-card"><h3>Zonas populares</h3>
+              <ul><li>Campo de las Naciones (IFEMA, Parque Juan Carlos I)</li></ul>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+  <!-- =================== FIN ADICIÓN 2 =================== -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#hero" class="logo">Tufitmentor<span>360</span></a>
+        <p>Entrenador personal presencial. Madrid.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#planes">Planes</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="foot-social">
+        <a href="https://instagram.com/tuusuario" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@tuusuario" target="_blank" rel="noopener">TikTok</a>
+        <a href="mailto:tufitmentor360@gmail.com">tufitmentor360@gmail.com</a>
+      </div>
+    </div>
+    <p class="copy">© <span id="year"></span> Tufitmentor360. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Banner de cookies -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <p>
+      Utilizamos cookies para mejorar tu experiencia. Al continuar aceptas su uso.
+      <a href="/politica-cookies.html" target="_blank" rel="noopener">Leer más</a>
+    </p>
+    <button id="accept-cookies" class="btn" type="button">Aceptar</button>
+  </div>
+
+  <!-- Botón flotante de WhatsApp (dentro del <body>) -->
+  <a href="https://wa.me/34919127181?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20planes"
+     class="wa-float" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
+    <img
+      class="wa-icon"
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+      width="32" height="32" />
+    <span id="waBadge" class="wa-badge">3</span>
+  </a>
+
+  <!-- JS inline tal cual lo tenías -->
+   <!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    // Tu Public Key real
+    emailjs.init("3OpuxVIDANyk0ItQB");
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    emailjs.sendForm("service_7z6lomn", "template_828c41q", this)
+      .then(() => {
+        alert("✅ Tu correo se ha enviado, contactaremos contigo lo antes posible.");
+        window.location.href = "gracias.html";
+      }, (error) => {
+        alert("❌ Error al enviar: " + JSON.stringify(error));
+      });
+  });
+</script>
+
+  <script>
+    // ===== Menú móvil =====
+    const btn = document.getElementById('btnMenu');
+    const nav = document.getElementById('navMenu');
+    btn?.addEventListener('click', () => {
+      const visible = nav.style.display === 'flex';
+      nav.style.display = visible ? 'none' : 'flex';
+    });
+
+    // ===== Año dinámico =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== Scroll suave =====
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const el = document.querySelector(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (window.innerWidth < 901) nav.style.display = 'none';
+        }
+      });
+    });
+
+    // ===== Cookies =====
+    (function(){
+      const banner = document.getElementById('cookie-banner');
+      const btnAccept = document.getElementById('accept-cookies');
+      const KEY = 'cookiesAccepted';
+
+      try {
+        if (!localStorage.getItem(KEY)) {
+          banner.classList.add('show');
+        }
+        btnAccept?.addEventListener('click', () => {
+          localStorage.setItem(KEY, 'yes');
+          banner.classList.remove('show');
+        });
+      } catch (e) {
+        banner.classList.add('show');
+        btnAccept?.addEventListener('click', () => banner.classList.remove('show'));
+      }
+    })();
+  </script>
+
+  <!-- ===== ADICIÓN 3: Script de búsqueda para la sección de cobertura ===== -->
+  <script>
+    (function(){
+      const q = document.getElementById('madridSearch');
+      const list = document.getElementById('madridList');
+      const items = Array.from(list?.querySelectorAll('.madrid-seo-details') || []);
+      const count = document.getElementById('madridCount');
+
+      if (!q || !items.length) return;
+
+      const norm = s => (s||'').toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g,'')  // quita tildes
+        .replace(/\s+/g,' ').trim();
+
+      // Cache: texto de cada details (distrito + barrios + zonas)
+      const cache = new Map();
+      items.forEach(el => cache.set(el, norm(el.textContent)));
+
+      const update = () => {
+        const term = norm(q.value);
+        let visibles = 0;
+
+        items.forEach(el => {
+          el.classList.remove('madrid-match');
+          if (!term) {
+            el.classList.remove('madrid-hidden');
+            el.open = false;
+            visibles++;
+            return;
+          }
+          const ok = cache.get(el).includes(term);
+          el.classList.toggle('madrid-hidden', !ok);
+          if (ok) { visibles++; el.open = true; el.classList.add('madrid-match'); }
+        });
+
+        if (count) count.textContent = visibles;
+      };
+
+      let t; q.addEventListener('input', () => { clearTimeout(t); t = setTimeout(update, 80); });
+      update();
+    })();
+  </script>
+</body>
+</html>
