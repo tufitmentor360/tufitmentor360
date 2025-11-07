@@ -135,13 +135,14 @@ a{color:var(--accent); text-decoration:none}
 
 /* ===== Plans ===== */
 .plans{display:grid; gap:20px; grid-template-columns:repeat(3,1fr); margin:12px 0 28px}
-.plan{
+.plan{ 
   position:relative;
   background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
   border:1px solid rgba(255,255,255,.06); border-radius:18px; padding:24px;
   display:flex; flex-direction:column; gap:14px;
   box-shadow:0 18px 45px rgba(0,0,0,.15); overflow:hidden;
 }
+.plan .btn.block{margin-top:auto;}
 .plan h4{margin:0}
 .plan .price{font-size:32px; font-weight:900}
 .plan .price span{font-size:14px; color:#b6bfcc}
@@ -391,15 +392,41 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent)}
   background:rgba(11,16,25,.95);
   color:#fff; padding:16px 20px;
   display:none !important;
-  justify-content:space-between; align-items:center; gap:14px;
+  flex-direction:column;
+  gap:16px;
   z-index:9999;
   box-shadow:0 -4px 20px rgba(0,0,0,.4);
   border-top:1px solid rgba(255,255,255,.12);
 }
 .cookie-banner.show{ display:flex !important; }
-.cookie-banner p{ margin:0; }
+.cookie-banner p{ margin:0; line-height:1.5; }
 .cookie-banner a{ color:var(--accent); text-decoration:underline; }
 .cookie-banner .btn{ padding:10px 18px; border-radius:10px; }
+.cookie-copy{display:flex; flex-direction:column; gap:8px;}
+.cookie-actions{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:flex-start;}
+.btn.link{
+  background:transparent;
+  box-shadow:none;
+  color:var(--accent);
+  animation:none;
+  padding:10px 0;
+}
+.btn.link:hover{transform:none; text-decoration:underline; filter:none;}
+.cookie-preferences{
+  background:rgba(12,17,27,.92);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:12px;
+  padding:14px 16px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.cookie-preferences fieldset{border:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;}
+.cookie-preferences legend{font-weight:800; margin-bottom:2px;}
+.cookie-option{display:flex; gap:12px; align-items:flex-start; color:#e5e9f2;}
+.cookie-option input{margin-top:4px;}
+.cookie-option small{display:block; font-size:.85rem; color:#cbd5e1; margin-top:4px;}
+.cookie-preferences .cookie-actions{justify-content:flex-end;}
 /* ===== Botón flotante WhatsApp ===== */
 .wa-float{
   position:fixed;

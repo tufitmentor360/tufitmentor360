@@ -86,7 +86,6 @@
             <li>Correcciones y guía en sala</li>
             <li>Plan mensual</li>
             <li>Seguimiento semanal</li>
-            <li>Coaching deportivo</li>
             <li>Acceso a programación</li>
           </ul>
           <a href="#contacto" class="btn block">¡Quiero empezar!</a>
@@ -98,9 +97,9 @@
             <li>Evaluación inicial</li>
             <li>Correcciones y guía en sala</li>
             <li>Plan mensual + hábitos</li>
-            <li>Seguimiento diario</li>
-            <li>Coaching deportivo</li>
+            <li>Seguimiento semanal</li>
             <li>Acceso a programación</li>
+            <li>Coaching deportivo</li>
           </ul>
           <a href="#contacto" class="btn block">¡Quiero empezar!</a>
         </article>
@@ -111,16 +110,17 @@
           <ul>
             <li>Evaluación inicial</li>
             <li>Correcciones y guía en sala</li>
-            <li>Plan mensual + hábitos + nutrición</li>
+            <li>Plan mensual + hábitos</li>
             <li>Seguimiento diario</li>
-            <li>Coaching deportivo</li>
             <li>Acceso a programación</li>
-            <li>Descuentos exclusivos</li>
+            <li>Coaching deportivo</li>
+            <li>Nutrición básica</li>
           </ul>
           <a href="#contacto" class="btn block">¡Quiero empezar!</a>
         </article>
       </div>
       <p class="mini-note">*Primera sesión al 50% si contratas bono.</p>
+      <p class="mini-note">*Con tu primera sesión diseñaremos un plan mensual personalizado alineado con tus objetivos para que puedas entrenar por tu cuenta.</p>
 
     </div>
   </section>
@@ -590,12 +590,41 @@
 
 
   <!-- Banner de cookies -->
-  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
-    <p>
-      Utilizamos cookies para mejorar tu experiencia. Al continuar aceptas su uso.
-      <a href="/politica-cookies.html" target="_blank" rel="noopener">Leer más</a>
-    </p>
-    <button id="accept-cookies" class="btn" type="button">Aceptar</button>
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies" aria-modal="true">
+    <div class="cookie-copy">
+      <p>
+        Utilizamos cookies propias para asegurar el funcionamiento básico del sitio y, opcionalmente, analíticas para mejorar nuestros servicios.
+        Puedes aceptar todas, rechazarlas o ajustar tus preferencias. Consulta nuestra <a href="/politica-cookies.html" target="_blank" rel="noopener">Política de cookies</a>.
+      </p>
+    </div>
+    <div class="cookie-actions">
+      <button id="accept-all-cookies" class="btn" type="button">Aceptar todas</button>
+      <button id="reject-cookies" class="btn ghost" type="button">Rechazar</button>
+      <button id="manage-cookies" class="btn link" type="button">Configurar</button>
+    </div>
+    <form id="cookie-preferences" class="cookie-preferences" aria-label="Preferencias de cookies" hidden>
+      <fieldset>
+        <legend>Preferencias</legend>
+        <label class="cookie-option">
+          <input type="checkbox" checked disabled>
+          <span>
+            Cookies necesarias
+            <small>Imprescindibles para que la web funcione y para recordar esta preferencia.</small>
+          </span>
+        </label>
+        <label class="cookie-option">
+          <input type="checkbox" id="cookie-analytics">
+          <span>
+            Cookies analíticas
+            <small>Nos ayudan a medir el uso de la web para mejorar tu experiencia.</small>
+          </span>
+        </label>
+      </fieldset>
+      <div class="cookie-actions">
+        <button id="save-cookie-preferences" class="btn" type="button">Guardar preferencias</button>
+        <button id="cancel-cookie-preferences" class="btn ghost" type="button">Cancelar</button>
+      </div>
+    </form>
   </div>
 
   <!-- Botón flotante de WhatsApp (dentro del <body>) -->
@@ -660,21 +689,108 @@
     // ===== Cookies =====
     (function(){
       const banner = document.getElementById('cookie-banner');
-      const btnAccept = document.getElementById('accept-cookies');
-      const KEY = 'cookiesAccepted';
+      if (!banner) return;
 
-      try {
-        if (!localStorage.getItem(KEY)) {
-          banner.classList.add('show');
+      const btnAcceptAll = document.getElementById('accept-all-cookies');
+      const btnReject = document.getElementById('reject-cookies');
+      const btnManage = document.getElementById('manage-cookies');
+      const prefForm = document.getElementById('cookie-preferences');
+      const btnSave = document.getElementById('save-cookie-preferences');
+      const btnCancel = document.getElementById('cancel-cookie-preferences');
+      const analyticsToggle = document.getElementById('cookie-analytics');
+
+      const KEY = 'cookiePreferences';
+      const basePrefs = { necessary: true, analytics: false };
+
+      if (prefForm) prefForm.hidden = true;
+
+      const parsePrefs = raw => {
+        try { return JSON.parse(raw); } catch { return null; }
+      };
+
+      const loadPrefs = () => {
+        try {
+          const stored = parsePrefs(localStorage.getItem(KEY));
+          if (stored && typeof stored.analytics === 'boolean') {
+            return { ...basePrefs, analytics: stored.analytics, consentedAt: stored.consentedAt || null };
+          }
+        } catch (e) {
+          console.warn('No se pudieron cargar las preferencias de cookies', e);
         }
-        btnAccept?.addEventListener('click', () => {
-          localStorage.setItem(KEY, 'yes');
-          banner.classList.remove('show');
-        });
-      } catch (e) {
+        return null;
+      };
+
+      const savePrefs = prefs => {
+        try {
+          localStorage.setItem(KEY, JSON.stringify(prefs));
+        } catch (e) {
+          console.warn('No se pudieron guardar las preferencias de cookies', e);
+        }
+      };
+
+      const applyPrefs = prefs => {
+        window.__cookiePreferences = prefs;
+        // Aquí podrías inicializar/deshabilitar scripts opcionales (analytics, remarketing, etc.)
+      };
+
+      const closeBanner = () => {
+        banner.classList.remove('show');
+        if (prefForm) prefForm.hidden = true;
+      };
+
+      const openBanner = () => {
         banner.classList.add('show');
-        btnAccept?.addEventListener('click', () => banner.classList.remove('show'));
+        if (prefForm) prefForm.hidden = true;
+      };
+
+      const existing = loadPrefs();
+      if (existing) {
+        applyPrefs(existing);
+        if (analyticsToggle) analyticsToggle.checked = !!existing.analytics;
+      } else {
+        openBanner();
       }
+
+      btnAcceptAll?.addEventListener('click', () => {
+        const prefs = { ...basePrefs, analytics: true, consentedAt: new Date().toISOString() };
+        if (analyticsToggle) analyticsToggle.checked = true;
+        savePrefs(prefs);
+        applyPrefs(prefs);
+        closeBanner();
+      });
+
+      btnReject?.addEventListener('click', () => {
+        const prefs = { ...basePrefs, analytics: false, consentedAt: new Date().toISOString() };
+        if (analyticsToggle) analyticsToggle.checked = false;
+        savePrefs(prefs);
+        applyPrefs(prefs);
+        closeBanner();
+      });
+
+      btnManage?.addEventListener('click', () => {
+        if (!prefForm) return;
+        prefForm.hidden = !prefForm.hidden;
+        if (!prefForm.hidden) {
+          setTimeout(() => analyticsToggle?.focus(), 60);
+        }
+      });
+
+      btnSave?.addEventListener('click', () => {
+        const prefs = { ...basePrefs, analytics: !!analyticsToggle?.checked, consentedAt: new Date().toISOString() };
+        savePrefs(prefs);
+        applyPrefs(prefs);
+        closeBanner();
+      });
+
+      btnCancel?.addEventListener('click', () => {
+        if (prefForm) prefForm.hidden = true;
+      });
+
+      document.addEventListener('keydown', evt => {
+        if (evt.key === 'Escape' && prefForm && !prefForm.hidden) {
+          prefForm.hidden = true;
+        }
+      });
     })();
   </script>
 
